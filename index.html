@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style2.css">
+    <script defer src="script.js"></script>
+    <script>
+/**
+ * Force Google Translate via le cookie googtrans.
+ * sourceLang et targetLang : codes ISO (ex: 'fr', 'en')
+ * domain : utilise window.location.hostname par défaut ; tu peux préciser '.github.io' si besoin.
+ */
+function setGoogleTranslateCookie(sourceLang = 'fr', targetLang = 'en', domain = null) {
+  try {
+    const value = '/'+sourceLang+'/'+targetLang;
+    const host = domain || window.location.hostname;
+    // Définir cookie pour le domaine racine si possible
+    // On met path=/ pour couvrir tout le site et expire dans 1 an
+    const expires = new Date(Date.now() + 365*24*60*60*1000).toUTCString();
+    // Tenter d'écrire pour le domaine exact
+    document.cookie = 'googtrans=' + encodeURIComponent(value) + ';domain=' + host + ';path=/;expires=' + expires + ';';
+    // Tenter aussi d'écrire pour la racine via un point (meilleur pour sous-domaines)
+    try {
+      document.cookie = 'googtrans=' + encodeURIComponent(value) + ';domain=.' + host + ';path=/;expires=' + expires + ';';
+    } catch(e) { /* ignore */ }
+    // Écrire localStorage (certaines versions lisent aussi localStorage)
+    try { localStorage.setItem('googtrans', value); } catch(e) {}
+    console.log('googtrans cookie set to', value, 'for host', host);
+  } catch(e) {
+    console.error('Impossible de définir le cookie googtrans', e);
+  }
+}
+</script>
+    
+    <title>MicroInvest Campus</title>
+</head>
+<body>
+    <!-- WIDGET GOOGLE TRANSLATE (on peut le cacher par CSS) -->
+<div id="google_translate_element" style="display:none;"></div>
+<!-- HTML du switcher (colle où tu veux dans body) -->
+<div id="lang-switcher" style="position:fixed;top:10px;right:10px;z-index:9999;">
+  <button id="to-en" aria-label="English">🇬🇧 EN</button>
+  <button id="to-fr" aria-label="Français">🇫🇷 FR</button>
+</div>
+
+<script>
+  // Actions pour les boutons : écrire cookie et recharger la page pour appliquer
+  document.getElementById('to-en').addEventListener('click', function(){
+    setGoogleTranslateCookie('fr','en');
+    // reload pour forcer l'API à relire le cookie et traduire
+    location.reload();
+  });
+  document.getElementById('to-fr').addEventListener('click', function(){
+    // Pour revenir au français : on met source=fr target=fr (ou on supprime cookie)
+    setGoogleTranslateCookie('fr','fr');
+    // Supprimer cookie alternatif
+    document.cookie = 'googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT;';
+    try { localStorage.removeItem('googtrans'); } catch(e){}
+    location.reload();
+  });
+</script>
+    <header >
+        <span>
+            <div>
+                <span><img loading="lazy" loading="lazy" src="image/copilot_image_1763721025178.webp" alt=""> MicroInvest</span>
+                <span id="navBtn">&#9776</span>
+            </div>
+            <div id="NavBar1">
+                <a href="#">acceuil</a>
+                <a href="#">plans</a>
+                <a href="#">tableau de bord</a>
+            </div>
+        </span>
+
+        <span>
+            Investissez à partir de 1$!
+            <p>et apprennez à faire fructifier votre argent,<br> 
+                <i>même avec un petit budget! </i>
+            </p>
+        </span>
+        <span id="NavBar" class="NavBar">
+            <a href="#">accueil</a>
+            <a href="#">plans</a>
+            <a href="#">tableau de bord</a>
+        </span>
+        
+    </header>
+    
+    <Section name="menu" class="acc">
+        <div>
+            <h1>Pourqoui nous choisir ?</h1>
+            <p style="text-align: center; margin: 15px 0 0 0;">investissez à votre rithme, dès 1$,<br> et apprenez à maîtriser vos finances-- et sa même avec un petit budjet !!</p>
+            <p>
+                <img loading="lazy" src="image/accessible a tous1.webp" alt="">
+                <span>
+                    <span><span>&#8226</span>Micro-Investissements accessible à tous</span>
+                    <span><span>&#8226</span>Apprentissage simplifié et gamifié</span>
+                    <span><span>&#8226</span>Partenaires financier sûrs et <strong>Agrées</strong></span>
+                    <span><span>&#8226</span>Suivis et conseils adaptés aux débutants</span>
+
+                </span>
+            </p>
+        </div>
+        <div>
+            <h1>Comment sa marche ?</h1>
+            <p>
+                <img loading="lazy" src="image/comment sa marche.webp" alt="">
+                <span>
+                    <span><span>&#8226</span><strong>Créer un compte gratuit</strong>-inscription rapide avec un numéro de télèphone et un mot de passe!</span>
+                    <span><span>&#8226</span><strong>Choisir votre portefeuille</strong>-un portefeuille <mark>Demo</mark> ou <mark>réel</mark></span>
+                    <span><span>&#8226</span><strong>Investir et Apprendre</strong>-micro-investissements réguliers et contenus éducatifs</span>
+                    <span><span>&#8226</span>Suivis et conseils adaptés aux débutants</span>
+
+                </span>
+            </p>
+        </div>
+        <div>
+            <h1>Témoignages / Avis</h1>
+            <p>
+                <img loading="lazy" src="image/temoignage avis users.webp" alt="">
+                <span class>
+                    <span>
+                        <img loading="lazy" src="image/account users.webp" alt="">
+                        <span>@le roy</span>
+                    </span>
+                    <span>
+                        j'ai commencé à investir avec seulement 5$ par semaine et j'apprends tout les jours. 🙃
+                    </span>
+                </span>
+            </p>
+        </div>
+        <div>
+            <h1>Ressources et éducations</h1>
+            <p class="Ress">
+                <img loading="lazy" src="image/ressources et education.webp" alt="">
+                <span id="links">
+                    <span>Service Client</span>
+                    <span>Notre Groupe</span>
+                </span>
+            </p>
+        </div>
+    </Section>
+
+    <section name="menu" class="plans">
+            <video src="video/cristaux.mp4" loop muted autoplay></video>
+        <h1>Plans d'Investissements</h1>
+
+        <div id="plans">
+            <span class="plan" id="plan">
+                <span>15.3<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Crypto</span></span>
+                    <span>actif: <span>Ethereum (ETH)</span> </span>
+                    <span>durée: <span>11h</span></span><!--11h-->
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+            <span class="plan" id="plan">
+                <span>5.25<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Crypto</span></span>
+                    <span>actif: <span>PolKadot (DOT)</span> </span>
+                    <span>durée: <span>1h</span></span><!--1h-->
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+            <span class="plan" id="plan">
+                <span>33.73<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Crypto</span></span>
+                    <span>actif: <span>ChainLink (LINK)</span> </span>
+                    <span>durée: <span>10h</span></span>
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+            <span class="plan" id="plan">
+                <span>15.3<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Crypto</span></span>
+                    <span>actif: <span>Cardano (ADA)</span> </span>
+                    <span>durée: <span>17h</span></span>
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+            <span class="plan" id="plan">
+                <span>34.23<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Crypto</span></span>
+                    <span>actif: <span>SUI (SUI)</span> </span>
+                    <span>durée: <span>27h</span></span>
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+            <span class="plan" id="plan">
+                <span>23.33<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Crypto</span></span>
+                    <span>actif: <span>BlockDAG (DAG)</span> </span>
+                    <span>durée: <span>5h</span></span>
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+            <span class="plan" id="plan">
+                <span>20<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Crypto</span></span>
+                    <span>actif: <span>BitCoin (BTC)</span> </span>
+                    <span>durée: <span>3h</span></span>
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+            <!-- Forex -->
+            <span class="plan" id="plan">
+                <span>7.43<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Forex</span></span>
+                    <span>actif: <span>KAS/USD</span> </span>
+                    <span>durée: <span>18h</span></span>
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+            <span class="plan" id="plan">
+                <span>3.29<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Forex</span></span>
+                    <span>actif: <span>XRP/USD</span> </span>
+                    <span>durée: <span>15h</span></span>
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+            <span class="plan" id="plan">
+                <span>15.17<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Forex</span></span>
+                    <span>actif: <span>KAS/USD</span> </span>
+                    <span>durée: <span>47h</span></span>
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+            <span class="plan" id="plan">
+                <span>2.70<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Forex</span></span>
+                    <span>actif: <span>BNB/USD</span> </span>
+                    <span>durée: <span>30h</span></span>
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+            <span class="plan" id="plan">
+                <span>4.25<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Forex</span></span>
+                    <span>actif: <span>LINK/USD</span> </span>
+                    <span>durée: <span>17h</span></span>
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+            <span class="plan" id="plan">
+                <span>80<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Forex</span></span>
+                    <span>actif: <span>BTC/USD</span> </span>
+                    <span>durée: <span>10h</span></span>
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+            <span class="plan" id="plan">
+                <span>50.54<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Forex</span></span>
+                    <span>actif: <span>EUTH/USD</span> </span>
+                    <span>durée: <span>24h</span></span>
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+            <span class="plan" id="plan">
+                <span>45.33<span>%</span></span>
+                <span class="Xtiques">
+                    <span>methodes: <span>Forex</span></span>
+                    <span>actif: <span>DOGE/USD</span> </span>
+                    <span>durée: <span>3h</span></span>
+                    <span>status: <span>Disponible</span> <img loading="lazy" src="image/validate.webp" alt=""></span>
+                    <span>0.0000233 <span>XAF</span></span>
+                </span>
+                <span>Investir</span>
+            </span>
+        </div>
+        
+    </section>
+
+    <section name="menu" class="DashBoard">
+        <video src="video/tourbillonvideo.mp4" loop muted autoplay></video>
+        <sec class="account">
+            <span>
+                <span>Compte  <span style="font-size: 30px; color: green; margin: 0 10px 0 10px;">Reel</span><img loading="lazy" style="width: 30px;" src="image/validate.webp" alt=""><span style="font-size: 30px; justify-self: center; margin: 0 0 0 25px;">&#9660;</span> </span>
+                <span id="demoBtn">
+                    <span>Demo</span>
+                    <span>Reel</span>
+                </span>
+            </span>
+            <span>
+                <div>
+                    <div id="contMoney1">XAF 00.00</div>
+                    <div>
+                        <p>Parrainage</p>
+                        <p>
+                            recolter jusqu'à <span style="color: green; font-size: 25px;">55%</span> de l'interêt des personnes qui
+                            se seront inscrit à l'aide de votre adresse de parrainage.
+                        </p>
+                        <p id="parrainBtn">je veux essayer</p>
+                        <p class="full">
+                            "<b>Invitez vos amis et gagnez jusqu'à 55% de leurs bénéfices générés sur la plateforme</b>--Sans jamais toucher à leurs capital.<br>Vous les aidez à Investir, <i>Vous êtes récompensé.</i>"
+                        </p>
+                        <div id="ParrLink" class="ParrainLink">
+                            <span>https://outlook.office.com/mail/olkerror.html?bret=fail&esrc=IndexPageIncomplete&app=native&bO=2</span>
+                            <span>Copier le lien</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div id="numaccoutn">
+                        <span>Compte N°80*****78</span>
+                        <span style="display: flex; align-items: center; margin: 0 0 0 15px;">activé <img loading="lazy" style="width: 30px; margin: 0 4px;" src="image/validate.webp" alt=""></span>
+                    </div>
+                    <div>
+                        <span>Depôt</span>
+                        <span>Retrait</span>
+                    </div>
+                    <p class="full">
+                        Un compte activé possède l'indicateur <b>activé</b>, tandis qu'un compte désactivé possède un indicateur du genre "non activé"
+                    </p>
+                    <div id="BtnDeonect" class="Deconectbtn">Se Deconnecter</div>
+                </div>
+            </span>
+            <span>
+                Numero de telephone 
+                <div>
+                    <span id="country_code">
+                        +237
+                    </span>
+                    <input id="number" maxlength="9" type="tel" placeholder="6********" name="">
+                    <span>Enregistrer</span>
+                </div>
+            </span>
+            <span class="space" title="les personnes parrainer à votre lien, apparaîsse automatiquement ici.">
+                <h1>System Parrainage</h1>
+                <div title="partager votre liens de parrainage pour beneficier de gain dès maintenant !!">0  élèment(s)</div>
+            </span>
+            <span class="space" title="votre historique de Transaction s'affiche ici">
+            </span>
+        </sec>
+    </section>
+
+    <div id="CurrMoney" title="votre solde + profit actuel des investissements en cours">XAF 1,000,000,000.00</div>
+    <div id="windows">
+        <div>
+            <div><img loading="lazy" src="image/copilot_image_1763721025178.webp" alt="">MicroInvest Campus</div>
+            <div>
+                <div>⚠️ Avertissement 💥</div>
+                <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At ducimus nesciunt recusandae, dolore voluptatum minus deleniti, officiis numquam consequatur iusto fugit non quidem id omnis, asperiores iure odit cumque qui.</div>
+            </div>
+            <div>
+                <span>Accepter</span>
+                <span>refuser</span>
+            </div>
+        </div>
+        <div id="windowsDepot">
+            <div><img loading="lazy" src="image/copilot_image_1763721025178.webp" alt="">MicroInvest Campus</div>
+            <div>
+                <div>🚩 conseils </div>
+                <div>
+                    <div>💠 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, quod consectetur assumenda</div>
+                    <div>💠 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, quod consectetur assumenda</div>
+                    <div>💠 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, quod consectetur assumenda</div>
+                    <div>💠 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, quod consectetur assumenda</div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <span>MTN MOMO</span>
+                        <span>Orange MONEY</span>
+                    </div>
+                    <div><span>Noms :</span><span style="font-size: 18px; letter-spacing: 2px; text-transform: uppercase;">ULRICH GABIN TCHINDA TCHADJUI</span></div>
+                    <div><span>Numero (🇨🇲) :</span><span><span style="font-size: 20px;">651884649</span><span id="BtnCopy">Copier</span></span></div>
+                    <div id="IdTransac"><span>⚠️Important</span><input type="tel" name="" placeholder="ID Transaction" id="IDdetransaction"></div>
+                </div>
+                <div><span>XAF </span> <input type="tel" maxlength="6" placeholder="Montant" id="inputDeposite"></div>
+                <p>min = 2.00 EUR,        max = 50,000.00 EUR</p>
+            </div>
+            <div>
+                <span>Valider</span>
+                <span>Annuler</span>
+            </div>
+        </div>
+        <div id="PutInvestment">
+            <h1>offre N°</h1>
+            <div>
+                <div>
+                    <span>Methode :</span>
+                    <span>Crypto/Forex</span>
+                </div>
+                <div>
+                    <span>Actif :</span>
+                    <span>BTC/EUR/USD</span>
+                </div>
+                <div>
+                    <span>Time :</span>
+                    <span>6</span>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <span>valeur :</span>
+                    <span>
+                        <span>XAF</span>
+                        <input type="tel" placeholder="150000">
+                    </span>
+                </div>
+                <div>
+                    <span>Gain (6.43%)</span>
+                    <span>XAF 0.00</span>
+                </div>
+                <div>
+                    <span>Profit Total :</span>
+                    <span>XAF 0.00</span>
+                </div>
+            </div>
+            <div id="validateInvest">
+                <span>Lancer</span>
+                <span>Rejetter</span>
+            </div>
+        </div>
+    </div>
+<script>
+  // 1) définir cookie pour forcer la traduction par défaut en anglais
+  // Remplace 'fr' et 'en' si ton site a d'autres langues.
+  setGoogleTranslateCookie('fr', 'en');
+
+  // 2) Fonction d'init (nécessaire pour l'API)
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'fr',
+      includedLanguages: 'en,fr',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+
+  // 3) Charger l'API Google Translate (appelera googleTranslateElementInit une fois prête)
+  (function() {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.head.appendChild(s);
+  })();
+</script>
+
+</body>
+</html>
