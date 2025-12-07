@@ -1,0 +1,249 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    text-decoration: 0;
+    transition: 0.3s;
+}
+a{
+    color: rgb(248, 168, 19);
+    text-transform: capitalize;
+}
+
+Body > Header{
+    background-image: url(image/front-m7VoJwB28ZFLB9VQ.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: contrast(1.2) brightness(2);
+    height: 500px;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+Body > Header > :nth-child(1) {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.501);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+Body > Header > :nth-child(1) > :nth-child(1){
+
+    padding: 10px 17px 0 17px;
+
+    display: flex;
+    flex-direction:row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    
+    font-weight: 700;
+    word-spacing: 4px;
+    letter-spacing: 2px;
+}
+Body > Header > :nth-child(1) > :nth-child(2){
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    margin: 20px 0 0 0;
+    padding: 0  0   0   15px;
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 1s ease;
+}
+/*///*/Body > Header > :nth-child(1):hover > :nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    margin: 20px 0 0 0;
+    padding: 0  0   0   15px;
+    overflow: hidden;
+    max-height: 1000px;
+    transition: max-height 1s ease;
+}
+Body > Header > :nth-child(1) > :nth-child(2) a{
+    position: relative;
+    margin: 10px 0 0 0;
+    
+    font-size: 24px;
+    width: 200px;
+    text-align: left;
+}
+Body > Header > :nth-child(1) > :nth-child(1) >:nth-child(1) > img{
+    width: 40px;
+}
+Body > Header > :nth-child(1) > :nth-child(1) >:nth-child(1) /*le logo*/{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: rgb(194, 194, 194);
+}
+#navBtn /*le button menu*/{/*///////////*/
+    color: rgb(194, 194, 194);
+    font-size: 30px;
+    cursor: pointer;
+}
+/*///////////////////////////////*/
+Body > Header > :nth-child(2){
+    position: relative;
+    top: 30%;
+    margin: 0 30px 0 75px;
+
+    
+
+    color: #ffea00;
+    font-size: 40px;
+    align-self: flex-end;
+}
+Body > Header > :nth-child(2) p{
+    text-align: end;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 200;
+}
+/*///////////////////////////////////*/
+Body > Header > span.NavBar{/*//////////*/
+    width: fit-content;
+    height: 30px;
+
+    display: flex;
+    justify-content: space-around;
+
+    filter: brightness(.8);
+    backdrop-filter: blur(03px);
+    border-radius: 10px;
+
+    
+}
+Body > Header > span.NavBar a:hover{
+    font-size: 28px;
+}
+Body > Header span.NavBar a{
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 0 20px 0 20px;
+    color: rgb(170, 111, 3);
+}
+/*/////////////////////////////////////*/
+section.acc{
+    margin: 50px 0 0 0;
+    max-width: 700px;
+    display: flex;/*////////////////////////////*/
+    flex-direction: column;
+    align-items: center;
+}
+section.acc > div{
+    width: 100%;
+    margin: 0 0 25px 0;
+    padding: 0 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section.acc > div > h1{
+    font-size: 200%;
+}
+section.acc > div > p{
+    display:inline-flex;
+    flex-direction: column;
+
+}
+section.acc > div > p > span{
+
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 0 0;
+
+    text-align: center;
+}
+section.acc > div > p > span > span > :nth-child(1){
+    font-size: 30px;
+    margin-right: 5px;
+}
+section.acc > div > p > span > span{
+    font-size: 24px;
+    margin-bottom: 7px;
+}
+
+strong{
+    font-size: 24px;
+}
+mark{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 4px 7px;
+    border-radius: 7px;
+    text-transform: capitalize;
+}
+section.acc > div > p > img{
+    width: 90%;
+    align-self: center;
+}
+section.acc > div > p > span[class]{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid rgb(116, 116, 116);
+    border-radius: 10px;
+    
+    text-align: center;
+}
+section.acc > div > p > span[class] > :nth-child(1), section.acc > div > p > span[class] > :nth-child(1)> span{
+    width: 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+section.acc > div > p > span[class] > :nth-child(2){
+    font-size: 20px;
+}
+section.acc > div > p > span > span >  img{
+    margin: 0 10px 7px 0;
+    width: 50px;
+    height: 50px;
+}
+/*//////*/
+section.acc .Ress > span{
+    display: flex;
+    flex-direction: column;
+}
+section.acc .Ress > span > span{
+
+    padding: 12px 0;
+    margin: 0 0 15px 0;
+
+    text-align: center;
+    font-size: 30px;
+    border: 2px solid rgb(237, 198, 26);
+    border-radius: 50px;
+    transition: 0.2s;
+}
+section.acc .Ress > span > span:hover{
+    font-size: 33px;
+    cursor: pointer;
+    background-color: rgb(237, 198, 26);
+    color: rgb(150, 150, 150);
+    transition: 0.2s;
+}
+
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

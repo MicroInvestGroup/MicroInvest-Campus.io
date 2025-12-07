@@ -1,0 +1,590 @@
+.plans{
+
+    display: none;/*//////////////////////////*/
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+#plans > #plan > :nth-child(2) > span{
+
+    width: 270px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    text-transform: capitalize;
+    font-size: 27px;
+    margin: 5px 0 5px 0;
+}
+#plans > #plan > :nth-child(2) > span > span{
+        font-size: 27px;
+        color: rgb(114, 255, 114);
+}
+#plans > #plan > :nth-child(2) > span > img{
+    width: 50px;
+}
+#plans > #plan > :nth-child(3){
+
+    margin: 20px 0 0 0;
+    padding: 5px 10px;
+    width: 100%;
+
+    border-radius: 50px;
+
+    font-size: 30px;
+    text-align: center;
+    background-color: rgb(255, 179, 0);
+    color: aliceblue;
+
+    cursor: pointer;
+}
+#plans > #plan > :nth-child(3):hover{
+    font-size: 33px;
+}
+/*///////////////////////////////////////*//*///////////*/
+.account{
+    display: flex;/*//////////////////////////////**/
+    flex-direction: column;
+    align-items: center;
+}
+.account > :nth-child(1){
+
+    width: 90%;
+    max-width: 700px;
+    padding: 10px 0;
+    margin: 18px 0;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border: 2px solid rgb(247, 247, 247);
+    border-radius: 20px;
+
+    overflow: hidden;
+}   
+    .account > :nth-child(1) > :nth-child(1){
+
+        display: flex;
+        margin: 0 0 15px 0;
+        font-size: 30px;
+
+    }
+    .account > :nth-child(1) > :nth-child(2){
+
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    .account > :nth-child(1):hover > :nth-child(2){
+        max-height: 1000px;
+        transition: 0.5s;
+    }
+        .account > :nth-child(1) > :nth-child(2) span{
+            
+            margin: 0 25px 0 25px;
+            width: 40%;
+            padding: 7px 0;
+            
+
+            background-color: rgb(123, 255, 0);
+            border-radius: 20px;
+
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-size: 25px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+        .account > :nth-child(1) > :nth-child(2) span:hover{
+            font-size: 22px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(255, 187, 0);
+        }
+
+
+
+body{
+    width: 100%;
+}
+
+@media (max-width: 1024px) {/*smartphone*/
+.DashBoard{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+}
+.DashBoard span, .DashBoard div{
+    color: aliceblue;
+}
+    .account{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .account > :nth-child(2) > div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+    }
+    .account > :nth-child(2) > :nth-child(1) > :nth-child(1){
+        font-size: 50px;
+        margin: 0 0 20px 0;
+    }
+     .account > :nth-child(2) > :nth-child(1) > :nth-child(2){
+        
+        width: 90%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      
+        padding: 18px;
+        margin: 10px 0 25px 0;
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 20px;
+    }
+    .account > :nth-child(2) > :nth-child(1) > :nth-child(2):hover > :nth-child(2), .account > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(3){
+        max-height: 1000px;
+    }
+      .account > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(1){
+        text-align: center;
+        margin: 0 0 15px 0;
+        font-size: 30px;
+
+      }
+      .account > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(2){
+        margin: 0 0 25px 0;
+        font-size: 20px;
+        width: 90%;
+     }
+     .account > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(3){
+        
+        padding: 7px 0;
+        text-align: center;
+        width: 90%;
+        font-size: 25px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(255, 187, 0);
+        border-radius: 50px;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+    .account > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(3):hover{
+        font-size: 28px;
+    }
+
+/*////////////////////////////////////*//*/////////*/
+
+.account > :nth-child(2) > :nth-child(2){
+    
+    width: 90%;
+    justify-self: center;
+    padding: 18px;
+    margin: 10px 0;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+}
+.account > :nth-child(2) > :nth-child(2) > :nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 0 25px 0;
+
+
+}
+.account > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(1), .account > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(2){
+    font-size: 25px;
+    margin: 0 10px;
+}
+ .account > :nth-child(2) > :nth-child(2) > :nth-child(2){
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+ }
+ .account > :nth-child(2) > :nth-child(2) > :nth-child(2) span{
+    
+    text-align: center;
+    font-size: 20px;
+    margin: 0 13px 0 13px;
+    padding: 7px 15px;
+    background-color: rgb(255, 187, 0);
+    border-radius: 20px;
+    width: 90%;
+    cursor: pointer;
+ }
+  .account > :nth-child(2) > :nth-child(2) > :nth-child(2) span:hover{
+    background-color: green;
+    font-size: 23px;
+    color: white;
+  }
+  /*/////////////////////////////////////////*//*//*/
+  .account > :nth-child(3){
+    margin: 25px 0 200px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    font-size: 24px;
+  } 
+  .account > :nth-child(3) >   div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 0 15px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 3px 3px;
+   }
+  .account > :nth-child(3) input{
+    width: 150px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 20px;
+    border: 2px solid rgb(255, 252, 252);
+    outline: none;
+    margin: 0 10px 0 0;
+    
+  }
+#country_code{
+    font-size: 24px;
+}
+  .account > :nth-child(3) > div :nth-child(3){
+    font-size: 24px;
+    background-color: rgb(255, 187, 0);
+    color: white;
+    border-radius: 10px;
+    padding: 3px 13px;
+    cursor: pointer;
+  }
+#plans{
+    padding: 17px 4px;
+    margin: 20px 0 0 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    border-top: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+}
+#plans > #plan{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 98%;
+    padding: 10px;
+    margin: 0 10px 25px 10px;
+
+    background-color: transparent;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border: 2px solid white;
+}
+#plans > #plan > :nth-child(1){
+    width: 80%;
+    padding: 7px 15px;
+    margin: 0 0 20px 0;
+    outline: 2px solid rgb(255, 179, 0);
+    border-radius: 50px;
+    background-color: rgb(255, 179, 0);
+
+    color: aliceblue;
+    font-size: 35px;
+    text-align: center;
+
+}
+#plans > #plan > :nth-child(2){
+    margin: 10px 0 0 0;
+
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.plans > h1{
+    margin: 30px 0 0 0;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 27px;
+    color: aliceblue;
+}
+/*/////////////////// Curr Money /////////////*/
+#CurrMoney{
+    position: fixed;
+    top: 20%;
+    left: 0;
+    color: aliceblue;
+    background-color: orange;
+    border-left: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 3px 15px 0 3px;
+}
+
+.ParrainLink > :nth-child(1){
+    display: flex;
+    align-items: center;
+    padding: 7px 5px;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 80%;
+    overflow-x: scroll;
+}
+/*///////////////////////////////////*/
+}
+@media  (min-width: 1024px) { /* ordinateur */
+.DashBoard {
+    width: 100%;
+    
+}
+.DashBoard span, .DashBoard div{
+    color: aliceblue;
+}
+    .account{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 0 20px;
+        /*backdrop-filter: blur(7px) brightness(.4);*/
+    }
+    .account > :nth-child(2) {
+        display: flex;
+        align-items: flex-start;
+        border: 2px solid white;
+        border-radius: 30px;
+    }
+    .account > :nth-child(2) > div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .account > :nth-child(2) > :nth-child(1) > :nth-child(1){
+        font-size: 50px;
+        margin: 0 0 20px 0;
+    }
+     .account > :nth-child(2) > :nth-child(1) > :nth-child(2){
+        
+        width: 90%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      
+        padding: 18px;
+        margin: 10px 0 25px 0;
+        /*border: 2px solid rgba(248, 248, 248, 0.72);*/
+        border-radius: 20px;
+    }
+    .account > :nth-child(2) > :nth-child(1) > :nth-child(2):hover > :nth-child(2), .account > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(3){
+        max-height: 1000px;
+    }
+      .account > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(1){
+        text-align: center;
+        margin: 0 0 15px 0;
+        font-size: 30px;
+
+      }
+      .account > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(2){
+        margin: 0 0 25px 0;
+        font-size: 20px;
+        width: 90%;
+     }
+     .account > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(3){
+        
+        padding: 7px 0;
+        text-align: center;
+        width: 90%;
+        font-size: 25px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(255, 187, 0);
+        border-radius: 50px;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+    .account > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(3):hover{
+        font-size: 28px;
+    }
+
+/*////////////////////////////////////*//*/////////*/
+
+.account > :nth-child(2) > :nth-child(2){
+    
+    width: 90%;
+    justify-self: center;
+    padding: 18px;
+    margin: 10px 0;
+    /*border: 2px solid rgba(255, 255, 255, 0.72);*/
+    border-radius: 20px;
+}
+.account > :nth-child(2) > :nth-child(2) > :nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 0 25px 0;
+
+
+}
+.account > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(1), .account > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(2){
+    font-size: 25px;
+    margin: 0 10px;
+}
+ .account > :nth-child(2) > :nth-child(2) > :nth-child(2){
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+ }
+ .account > :nth-child(2) > :nth-child(2) > :nth-child(2) span{
+    
+    text-align: center;
+    font-size: 20px;
+    margin: 0 13px 0 13px;
+    padding: 7px 15px;
+    background-color: rgb(255, 187, 0);
+    border-radius: 20px;
+    width: 90%;
+    cursor: pointer;
+ }
+  .account > :nth-child(2) > :nth-child(2) > :nth-child(2) span:hover{
+    background-color: green;
+    font-size: 23px;
+    color: white;
+  }
+  /*/////////////////////////////////////////*//*//*/
+  .account > :nth-child(3){
+    margin: 25px 0 200px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    font-size: 24px;
+  } 
+  .account > :nth-child(3) >   div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 0 15px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 3px 3px;
+   }
+  .account > :nth-child(3) input{
+    width: 150px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    outline: none;
+    margin: 0 10px 0 0;
+    
+  }
+#country_code{
+    font-size: 24px;
+}
+  .account > :nth-child(3) > div :nth-child(3){
+    font-size: 24px;
+    background-color: rgb(255, 187, 0);
+    color: white;
+    border-radius: 10px;
+    padding: 3px 13px;
+    cursor: pointer;
+  }
+    /*//////////////////////*/
+#plans{
+    padding: 17px;
+    margin: 20px 0 0 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    border-top: 2px solid rgb(255, 255, 255);
+
+}
+#plans > #plan{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 300px;
+    padding: 10px;
+    margin: 0 10px 25px 10px;
+
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.671);
+    backdrop-filter: blur(7px);
+}
+#plans > #plan > :nth-child(1){
+    width: 80%;
+    padding: 7px 15px;
+    margin: 0 0 20px 0;
+    outline: 2px solid rgb(255, 179, 0);
+    border-radius: 50px;
+    background-color: rgb(255, 179, 0);
+
+    color: aliceblue;
+    font-size: 35px;
+    text-align: center;
+
+}
+#plans > #plan > :nth-child(2){
+    margin: 10px 0 0 0;
+
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.plans > h1{
+    margin: 30px 0 0 0;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    color: aliceblue;
+}
+
+/*/////////////////// Curr Money /////////////*/
+#CurrMoney{
+    position: fixed;
+    top: 25%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    left: 0;
+    color: aliceblue;
+    background-color: orange;
+    border-left: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 3px 15px 0 3px;
+}
+.ParrainLink > :nth-child(1){
+    display: flex;
+    align-items: center;
+    padding: 7px 20px;
+    border: 2px solid white;
+    border-radius: 20px;
+    overflow:visible;
+}
+/*///////////////////////////////////*/
+}
