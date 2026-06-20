@@ -2,70 +2,29 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="style2.css">
     <script defer src="script.js"></script>
-    <script>
-/**
- * Force Google Translate via le cookie googtrans.
- * sourceLang et targetLang : codes ISO (ex: 'fr', 'en')
- * domain : utilise window.location.hostname par défaut ; tu peux préciser '.github.io' si besoin.
- */
-function setGoogleTranslateCookie(sourceLang = 'fr', targetLang = 'en', domain = null) {
-  try {
-    const value = '/'+sourceLang+'/'+targetLang;
-    const host = domain || window.location.hostname;
-    // Définir cookie pour le domaine racine si possible
-    // On met path=/ pour couvrir tout le site et expire dans 1 an
-    const expires = new Date(Date.now() + 365*24*60*60*1000).toUTCString();
-    // Tenter d'écrire pour le domaine exact
-    document.cookie = 'googtrans=' + encodeURIComponent(value) + ';domain=' + host + ';path=/;expires=' + expires + ';';
-    // Tenter aussi d'écrire pour la racine via un point (meilleur pour sous-domaines)
-    try {
-      document.cookie = 'googtrans=' + encodeURIComponent(value) + ';domain=.' + host + ';path=/;expires=' + expires + ';';
-    } catch(e) { /* ignore */ }
-    // Écrire localStorage (certaines versions lisent aussi localStorage)
-    try { localStorage.setItem('googtrans', value); } catch(e) {}
-    console.log('googtrans cookie set to', value, 'for host', host);
-  } catch(e) {
-    console.error('Impossible de définir le cookie googtrans', e);
-  }
-}
-</script>
-    
     <title>MicroInvest Campus</title>
+    
 </head>
 <body>
-    <!-- WIDGET GOOGLE TRANSLATE (on peut le cacher par CSS) -->
-<div id="google_translate_element" style="display:none;"></div>
-<!-- HTML du switcher (colle où tu veux dans body) -->
-<div id="lang-switcher" style="position:fixed;top:10px;right:10px;z-index:9999;">
-  <button id="to-en" aria-label="English">🇬🇧 EN</button>
-  <button id="to-fr" aria-label="Français">🇫🇷 FR</button>
-</div>
-
-<script>
-  // Actions pour les boutons : écrire cookie et recharger la page pour appliquer
-  document.getElementById('to-en').addEventListener('click', function(){
-    setGoogleTranslateCookie('fr','en');
-    // reload pour forcer l'API à relire le cookie et traduire
-    location.reload();
-  });
-  document.getElementById('to-fr').addEventListener('click', function(){
-    // Pour revenir au français : on met source=fr target=fr (ou on supprime cookie)
-    setGoogleTranslateCookie('fr','fr');
-    // Supprimer cookie alternatif
-    document.cookie = 'googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT;';
-    try { localStorage.removeItem('googtrans'); } catch(e){}
-    location.reload();
-  });
-</script>
+    <div id="chariow-widget" data-product-id="prd_xb6lh9"
+    data-store-domain="vemvtxtx.mychariow.shop"
+    data-style="frame"
+    data-border-style="rounded"
+    data-cta-width="xs"
+    data-cta-animation="pulse_glow"
+    data-locale="en"
+    data-primary-color="#FFCC00"
+    data-background-color="#FFFFFF"
+    style="position: fixed; align-self: center; justify-self: center; transform: translate(0%, 0%); z-index: 110;"></div>
     <header >
         <span>
             <div>
-                <span><img loading="lazy" loading="lazy" src="image/copilot_image_1763721025178.webp" alt=""> MicroInvest</span>
+                <span><img loading="lazy" src="image/copilot_image_1763721025178.webp" alt=""> MicroInvest</span>
                 <span id="navBtn">&#9776</span>
             </div>
             <div id="NavBar1">
@@ -463,28 +422,5 @@ function setGoogleTranslateCookie(sourceLang = 'fr', targetLang = 'en', domain =
             </div>
         </div>
     </div>
-<script>
-  // 1) définir cookie pour forcer la traduction par défaut en anglais
-  // Remplace 'fr' et 'en' si ton site a d'autres langues.
-  setGoogleTranslateCookie('fr', 'en');
-
-  // 2) Fonction d'init (nécessaire pour l'API)
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'fr',
-      includedLanguages: 'en,fr',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-
-  // 3) Charger l'API Google Translate (appelera googleTranslateElementInit une fois prête)
-  (function() {
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    document.head.appendChild(s);
-  })();
-</script>
-
 </body>
 </html>

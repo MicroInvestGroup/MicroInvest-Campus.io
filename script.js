@@ -432,14 +432,24 @@ inputvalueInvest.addEventListener("input", ()=> {
             windowsConfirm.style.display = "none";
             windowsDeposite.style.display = "block";
             putInvest.style.display = "none";
+///////////// chariow /////////)/
+  var script = document.createElement('script');
+  script.src = 'https://js.chariowcdn.com/v1/widget.min.js';
+  script.async = true;
+  document.head.appendChild(script);
 
-            SectDeposite[demoaccount? 1 : 0].style.display = "flex";
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://js.chariowcdn.com/v1/widget.min.css';
+  document.head.appendChild(link);
+  ///////////// chariow /////////)/
+            /*SectDeposite[demoaccount? 1 : 0].style.display = "flex";
             SectDeposite[demoaccount? 0 : 1].style.display = "none";
             SectDeposite[2].textContent = demoaccount? "min = XAF 700.00,        max = XAF 1,000,000,000.00" : "min = XAF 1,999.00,        max = XAF 800,000.00" 
             windowsNotif.style.opacity = "1";
             windowsNotif.style.transform = "scale(1)";
 
-            BodyDescrip.innerHTML = demoaccount?"<div>💠 saisir la somme à incrementer sur votre compte DEMO.</div><br><div>💠 <b><i>Remarque : </i></b> vous pouvez effectuer des grandes transaction sur votre comtpe DEMO, mais afin de respecter les Standard de la realité(Compte REEL), des limites ont été mise en place !! de même que sur votre solde.</div><br><div>💠 l'argent ajouter sur votre compte DEMO ne peut être rétirer sur votre COMPTE d'argent Mobile!!, il ne sert qu'a vous montrer l'étendus de notre plateforme.</div>":"<div>💠 faire un depôt est facile et très rapide il suffit juste de faire le transfert de votre compte d'argent mobile vers les adresses ci-dessous et puis saisir l'ID de transaction et nous n'envoyer par Courrier.</div><br><div>💠 il est inutile de faire un depôt pour votre compte sans au prealable envoyer l'ID de la transaction par le bias ci-dessous.</div><br><div>💠 un message peut interrompre le processus si le montant saisit ne respecte pas nos standard sur le Depôt(min et max).</div>"
+            BodyDescrip.innerHTML = demoaccount?"<div>💠 saisir la somme à incrementer sur votre compte DEMO.</div><br><div>💠 <b><i>Remarque : </i></b> vous pouvez effectuer des grandes transaction sur votre comtpe DEMO, mais afin de respecter les Standard de la realité(Compte REEL), des limites ont été mise en place !! de même que sur votre solde.</div><br><div>💠 l'argent ajouter sur votre compte DEMO ne peut être rétirer sur votre COMPTE d'argent Mobile!!, il ne sert qu'a vous montrer l'étendus de notre plateforme.</div>":"<div>💠 faire un depôt est facile et très rapide il suffit juste de faire le transfert de votre compte d'argent mobile vers les adresses ci-dessous et puis saisir l'ID de transaction et nous n'envoyer par Courrier.</div><br><div>💠 il est inutile de faire un depôt pour votre compte sans au prealable envoyer l'ID de la transaction par le bias ci-dessous.</div><br><div>💠 un message peut interrompre le processus si le montant saisit ne respecte pas nos standard sur le Depôt(min et max).</div>"*/
         }else if(numMenu === 1){
             // sortir de la fenetre de depot apres l'avoir effectuer
             windowsNotif.style.pointerEvents = "none";
